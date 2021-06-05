@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
-// import {Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom';
 import axios from 'axios'
+import ScrollUpButton from 'react-scroll-up-button'
 import AddForm from './components/AddForm.js'
 import Moms from './components/Moms.js'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Nav from './components/Nav'
+import Welcome from './components/Welcome'
 
 
 class App extends Component {
@@ -41,19 +47,19 @@ class App extends Component {
    }
 
    deleteMom = (event) =>{
-      axios.delete('https://momswhoblog-backend.herokuapp.com/moms' + event.target.value).then((response)=>{
-         this.getMom()
+      axios.delete('https://momswhoblog-backend.herokuapp.com/moms/' + event.target.getAttribute("name")).then((response)=>{
+         this.getMoms()
       })
    }
 
    updateMom = (event)=>{
       event.preventDefault()
-      const id = event.target.id
-      axios.put('https://momswhoblog-backend.herokuapp.com/moms' + id,
+      const id = event.target.getAttribute("name")
+      axios.put('https://momswhoblog-backend.herokuapp.com/moms/' + id,
       this.state).then((response)=>{
-         this.getMom()
+
          this.setState({
-            moms:[],
+            moms: response.data,
             img: "",
             author: "",
             title: "",
@@ -68,18 +74,27 @@ class App extends Component {
 
    render() {
       return(
-         <div className="">
-         <AddForm addMoms={this.addMoms} id="add"/>
-            {this.state.moms.map((moms) => {
-               return <Moms moms={moms}
-               updateMom={this.updateMom}
-               deleteMom={this.deleteMom}
-               handleChange={this.handleChange}
-               />
-            })}
-         </div>
+         <Router>
+            <div className="">
+               <ScrollUpButton/>
+               <Nav/>
+               <Route path="/welcome" component={Welcome}/>
+
+               <AddForm addMoms={this.addMoms} id="add"/>
+
+               <Route path="/Moms">
+                  {this.state.moms.map((moms) => {
+                     return <Moms moms={moms}
+                     updateMom={this.updateMom}
+                     deleteMom={this.deleteMom}
+                     handleChange={this.handleChange}
+                     />
+                  })}
+               </Route>
+                  <Footer/>
+            </div>
+         </Router>
       )
    }
-
 }
 export default App;

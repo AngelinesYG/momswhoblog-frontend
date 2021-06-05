@@ -10,7 +10,7 @@ export default class Moms extends Component {
          <h3>Blog Entry: {this.props.moms.blog}</h3>
          <details>
             <summary>Edit Blog Entry</summary>
-               <form id={this.props.moms.id}
+               <form name={this.props.moms._id}
                onSubmit={this.props.updateMom}>
                   <label htmlFor="author">Author</label>
                   <br/>
@@ -34,7 +34,7 @@ export default class Moms extends Component {
                   <br />
                   <input type="submit" value="Update Blog"/>
                </form>
-               <button value={this.props.moms.id}
+               <button name={this.props.moms._id}
                onClick={this.props.deleteMom} id="del-btn">
                Delete Blog
                </button>

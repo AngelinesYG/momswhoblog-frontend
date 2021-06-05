@@ -27,7 +27,8 @@ export default class AddForm extends Component {
 
    render(){
       return(
-         <div>
+         <details>
+            <summary>Add New Blog</summary>
             <div className="create-blog">
             <h1>Let's get Venting!</h1>
 
@@ -67,7 +68,7 @@ export default class AddForm extends Component {
                <br/>
                <input type="submit" value="Add New Blog" onClick={this.showForm}/>
             </form>
-         </div>
+         </details>
       )
    }
 }
