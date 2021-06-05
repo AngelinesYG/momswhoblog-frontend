@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+// import {Route, Switch} from 'react-router-dom';
 import axios from 'axios'
 import AddForm from './components/AddForm.js'
 import Moms from './components/Moms.js'
@@ -8,7 +8,7 @@ import Moms from './components/Moms.js'
 class App extends Component {
    state = {
       moms:[],
-      image: "",
+      img: "",
       author: "",
       title: "",
       blog: "",
@@ -16,7 +16,7 @@ class App extends Component {
 
    addMoms = (moms) =>{
       axios
-      .post('http://localhost:3001/moms', moms)
+      .post('https://momswhoblog-backend.herokuapp.com/moms', moms)
       .then((response)=>{
          this.getMoms()
       })
@@ -31,7 +31,7 @@ class App extends Component {
 
    getMoms = () => {
       axios
-      .get('http://localhost:3001/moms')
+      .get('https://momswhoblog-backend.herokuapp.com/moms')
       .then((response) =>{
          this.setState({
             moms: response.data
@@ -41,7 +41,7 @@ class App extends Component {
    }
 
    deleteMom = (event) =>{
-      axios.delete('http://localhost:3001/moms' + event.target.value).then((response)=>{
+      axios.delete('https://momswhoblog-backend.herokuapp.com/moms' + event.target.value).then((response)=>{
          this.getMom()
       })
    }
@@ -49,12 +49,12 @@ class App extends Component {
    updateMom = (event)=>{
       event.preventDefault()
       const id = event.target.id
-      axios.put('http://localhost:3001/moms' + id,
+      axios.put('https://momswhoblog-backend.herokuapp.com/moms' + id,
       this.state).then((response)=>{
          this.getMom()
          this.setState({
             moms:[],
-            image: "",
+            img: "",
             author: "",
             title: "",
             blog: "",
@@ -69,7 +69,7 @@ class App extends Component {
    render() {
       return(
          <div className="">
-         <AddForm addMoms={this.addMoms}/>
+         <AddForm addMoms={this.addMoms} id="add"/>
             {this.state.moms.map((moms) => {
                return <Moms moms={moms}
                updateMom={this.updateMom}
@@ -77,7 +77,6 @@ class App extends Component {
                handleChange={this.handleChange}
                />
             })}
-
          </div>
       )
    }

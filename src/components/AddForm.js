@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 export default class AddForm extends Component {
    state = {
       moms:[],
-      image: "",
+      img: "",
       author: "",
       title: "",
       blog: "",
@@ -20,11 +20,19 @@ export default class AddForm extends Component {
       this.props.addMoms(this.state)
    }
 
+   showForm = () => {
+      const addForm = document.querySelector('.addForm')
+      addForm.classList.toggle('visible')
+   }
+
    render(){
       return(
          <div>
-            <h1>Create New Blog</h1>
-            <form onSubmit={this.handleSubmit}>
+            <div className="create-blog">
+            <h1>Let's get Venting!</h1>
+
+            </div>
+            <form className="addForm" onSubmit={this.handleSubmit}>
                <label htmlFor="author">Author:</label>
                <input
                type="text"
@@ -33,10 +41,33 @@ export default class AddForm extends Component {
                onChange={this.handleChange}
                />
                <br />
-               <input type="submit" value="Add New Blog"/>
+               <label htmlFor="img">Image:</label><br/>
+               <input
+               type="text"
+               id="img"
+               value={this.state.img}
+               onChange={this.handleChange}
+               />
+               <br/>
+               <label htmlFor="title">Title:</label><br/>
+               <input
+               type="text"
+               id="title"
+               value={this.state.title}
+               onChange={this.handleChange}
+               />
+               <br/>
+               <label htmlFor="blog">Blog Entry:</label><br/>
+               <input
+               type="text"
+               id="blog"
+               value={this.state.blog}
+               onChange={this.handleChange}
+               />
+               <br/>
+               <input type="submit" value="Add New Blog" onClick={this.showForm}/>
             </form>
          </div>
       )
    }
-
 }
