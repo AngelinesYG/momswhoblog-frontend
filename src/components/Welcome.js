@@ -4,6 +4,7 @@ import React from 'react';
 const Welcome = () => {
    return(
       <div>
+      
          <h1>Welcome to Moms Who Blog!</h1>
 
          <p>Is no secret that being a working mom is very difficult and demanding. Especially in the society we live in. Being able to vent to release the emotional stress is deemed innapropriate and even weak at times. But being able to do so is such an important thing for us moms to stay sane.</p>

@@ -7,6 +7,8 @@ import AddForm from './components/AddForm.js'
 import Moms from './components/Moms.js'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Signup from './components/Signup'
+import Login from './components/Login'
 import Nav from './components/Nav'
 import Welcome from './components/Welcome'
 
@@ -70,18 +72,48 @@ class App extends Component {
 
    componentDidMount(){
       this.getMoms()
+      .then(response =>{
+         this.setState({
+            moms: response.data,
+            currentUser:{},
+         })
+      })
+   }
+
+   signUp = (event) =>{
+      event.preventDefault()
+      axios.post('https://momswhoblog-backend.herokuapp.com/users', this.state).then(response =>{
+         this.setState({
+            currentUser: response.data,
+         })
+      })
+   }
+
+   logIn = (event) =>{
+      event.preventDefault()
+      axios.post('https://momswhoblog-backend.herokuapp.com/login', this.state).then(response =>{
+         this.setState({
+            currentUser: response.data,
+         })
+      })
    }
 
    render() {
       return(
          <Router>
             <div className="">
+            logIn={this.logIn}
+            signUp={this.signUp}
+            handleChange={this.handleChange}
+            currentUser={this.state.currentUser.username}
                <ScrollUpButton/>
                <Nav/>
                <Switch>
                   <Route path="/" exact component={Welcome}>
                      <Welcome/>
                      <Footer/>
+                     <Signup/>
+                     <Login/>
                   </Route>
 
 
