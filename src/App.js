@@ -78,20 +78,24 @@ class App extends Component {
             <div className="">
                <ScrollUpButton/>
                <Nav/>
-               <Route path="/welcome" component={Welcome}/>
+               <Switch>
+                  <Route path="/" exact component={Welcome}>
+                     <Welcome/>
+                     <Footer/>
+                  </Route>
 
-               <AddForm addMoms={this.addMoms} id="add"/>
 
-               <Route path="/Moms">
-                  {this.state.moms.map((moms) => {
-                     return <Moms moms={moms}
-                     updateMom={this.updateMom}
-                     deleteMom={this.deleteMom}
-                     handleChange={this.handleChange}
-                     />
-                  })}
-               </Route>
-                  <Footer/>
+                  <Route path="/Moms">
+                  <AddForm addMoms={this.addMoms} id="add"/>
+                     {this.state.moms.map((moms) => {
+                        return <Moms moms={moms}
+                        updateMom={this.updateMom}
+                        deleteMom={this.deleteMom}
+                        handleChange={this.handleChange}
+                        />
+                     })}
+                  </Route>
+               </Switch>
             </div>
          </Router>
       )
