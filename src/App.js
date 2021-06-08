@@ -20,6 +20,7 @@ class App extends Component {
       author: "",
       title: "",
       blog: "",
+      currentUser: {},
    }
 
    addMoms = (moms) =>{
@@ -59,7 +60,6 @@ class App extends Component {
       const id = event.target.getAttribute("name")
       axios.put('https://momswhoblog-backend.herokuapp.com/moms/' + id,
       this.state).then((response)=>{
-
          this.setState({
             moms: response.data,
             img: "",
@@ -70,8 +70,9 @@ class App extends Component {
       })
    }
 
-   componentDidMount(){
-      this.getMoms()
+   componentDidMount =(event)=>{
+      axios
+      .get('https://momswhoblog-backend.herokuapp.com/moms/')
       .then(response =>{
          this.setState({
             moms: response.data,
@@ -80,43 +81,48 @@ class App extends Component {
       })
    }
 
-   signUp = (event) =>{
+   signUp = (event, newUser) =>{
       event.preventDefault()
-      axios.post('https://momswhoblog-backend.herokuapp.com/users', this.state).then(response =>{
+      axios.post('https://momswhoblog-backend.herokuapp.com/signup/', newUser).then(response =>{
          this.setState({
             currentUser: response.data,
          })
       })
    }
-
-   logIn = (event) =>{
-      event.preventDefault()
-      axios.post('https://momswhoblog-backend.herokuapp.com/login', this.state).then(response =>{
-         this.setState({
-            currentUser: response.data,
-         })
-      })
+   //
+   // logIn = (event) =>{
+   //    event.preventDefault()
+   //    axios.post('https://momswhoblog-backend.herokuapp.com/moms/', this.state).then(response =>{
+   //       this.setState({
+   //          currentUser: response.data,
+   //       })
+   //    })
+   // }
+   handleSignup = (event) =>{
+      this.setState(
+         {
+            [event.target.username]: event.target.value
+         }
+      )
    }
 
    render() {
       return(
          <Router>
             <div className="">
-            logIn={this.logIn}
-            signUp={this.signUp}
-            handleChange={this.handleChange}
-            currentUser={this.state.currentUser.username}
                <ScrollUpButton/>
                <Nav/>
                <Switch>
                   <Route path="/" exact component={Welcome}>
                      <Welcome/>
                      <Footer/>
-                     <Signup/>
-                     <Login/>
                   </Route>
-
-
+                  <Route path="/signup">
+                     <Signup signUp={this.signUp}
+                     handleSignup={this.handleSignup}
+                     />
+                  </Route>
+                  <Route path="/signup/login"></Route>
                   <Route path="/Moms">
                   <AddForm addMoms={this.addMoms} id="add"/>
                      {this.state.moms.map((moms) => {

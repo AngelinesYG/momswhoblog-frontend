@@ -4,6 +4,7 @@ class Login extends React.Component {
 
    render = () => {
       return <div className='login'>
+         logIn={this.logIn}
          <form onSubmit={this.props.logIn}>
             <label> User Name</label>
             <br />
