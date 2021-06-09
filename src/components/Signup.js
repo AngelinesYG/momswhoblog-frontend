@@ -3,6 +3,8 @@ import axios from 'axios';
 
 class Signup extends React.Component {
    state = {
+      firstName: "",
+      email: "",
       username: "",
       password: "",
    }
@@ -10,24 +12,35 @@ class Signup extends React.Component {
    handleSignup = (event) =>{
       this.setState(
          {
-            [event.target.username]: event.target.value
+            [event.target.name]: event.target.value
          }
       )
    }
 
-   sendUserInfo = () =>{
-      this.props.signUp(this.state)
+   sendUserInfo = (event) =>{
+      this.props.signUp(event, this.state)
    }
 
    render = () =>{
     return <div id='signup'>
-    <div>
-      {/*signUp={this.signUp}*/}
-      {/*handleSignup={this.handleSignup}*/}
-
-    </div>
-       <form action="/signup" method="POST" onSubmit={this.sendUserInfo}>
+       <form action="/signup" onSubmit={this.sendUserInfo}>
          <h3>Sign Up for Moms Who Blog</h3>
+         <label htmlFor="firstName">First Name:</label>
+         <br />
+         <input
+         type="text"
+         name="firstName"
+         value={this.props.firstName}
+         onChange={this.handleSignup}/>
+         <br />
+         <label htmlFor="email">Email:</label>
+         <br />
+         <input
+         type="text"
+         name="email"
+         value={this.props.email}
+         onChange={this.handleSignup}/>
+         <br />
           <label htmlFor="username">User Name:</label>
           <br />
           <input

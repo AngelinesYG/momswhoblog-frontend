@@ -101,7 +101,7 @@ class App extends Component {
    handleSignup = (event) =>{
       this.setState(
          {
-            [event.target.username]: event.target.value
+            [event.target.name]: event.target.value
          }
       )
    }
@@ -122,7 +122,11 @@ class App extends Component {
                      handleSignup={this.handleSignup}
                      />
                   </Route>
-                  <Route path="/signup/login"></Route>
+                  <Route path="/login">
+                     <Login login={this.login}
+                     handleLogin={this.handleLogin}
+                     />
+                  </Route>
                   <Route path="/Moms">
                   <AddForm addMoms={this.addMoms} id="add"/>
                      {this.state.moms.map((moms) => {
