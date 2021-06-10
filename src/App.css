@@ -2,7 +2,7 @@
 /*=========================================================
 ================== APP COMPONENT CSS =================*/
 body{
-   background: #b4dbda;
+      background: #e1c4f5;
 }
 .main-container{
    margin: auto;
@@ -17,6 +17,7 @@ body{
 }
 /*=========================================================
 ================== WELCOME COMPONENT CSS =================*/
+
 #welcoming{
    display: flex;
    flex-direction: column;
@@ -31,8 +32,7 @@ body{
 #welcoming img{
    width: 40vmin;
    height: 40vmin;
-   min-width: 200px;
-   max-width: 600px;
+   min-width: 500px;
    min-height: 200px;
    object-fit: cover;
    border-radius: 10px;
@@ -44,14 +44,16 @@ body{
 #resources{
    text-align: center;
     margin: 50px auto;
-    background: #cffaf8;
+    background: #a1b9f7;
     border: 2px solid #6adceb;
     border-radius: 10px;
     padding: 20px;
 }
 #resources li{
    list-style: none;
-   color: darkblue;
+}
+#resources a{
+   color: #073ded;
 }
 #resources a:hover{
    color: red;
@@ -64,7 +66,7 @@ nav {
    justify-content: space-around;
    align-items: center;
    min-height: 10vh;
-   background: purple;
+   background: #7a04c9;
    color: gold;
 }
 
@@ -77,7 +79,7 @@ nav {
 }
 
 .nav-Links li:hover{
-   color: blue;
+   color: #be9ad6;
    cursor: pointer;
 }
 /*=========================================================
@@ -88,7 +90,7 @@ nav {
 #blogtitle{
    font-size: 20px;
    font-weight: bold;
-   color: purple;
+   color: #c41b21;
 }
 .addForm label {
     width: 100px;
@@ -104,9 +106,7 @@ img {
 }
 /*=========================================================
 ================== MOMS COMPONENT CSS =================*/
-.momblog{
 
-}
 #mom-container{
    display: flex;
    flex-flow: row wrap;
@@ -117,21 +117,56 @@ img {
    display: flex;
    flex-direction: column;
    align-items: center;
-   background: #8af5ff;
+   background: #be9ad6;
    min-width: 300px;
    max-width: 400px;
-   border: 3px solid red;
+   border: 3px solid #5959ff;
    border-radius: 10px;
    padding: 20px;
    margin: 10px;
 }
+#mom-container img{
+   border: 2px solid red;
+   align-self: center;
+   padding: 2px;
+   margin: auto;
+}
 
 /*=========================================================
 ================== SIGNUP COMPONENT CSS =================*/
+#signup{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+   position: relative;
+   min-height: 500px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+   text-decoration-color: red;
+}
+ #signup label{
+    color: #f70d05;
+    font-weight: bolder;
+    text-shadow: red;
+}
 
 /*=========================================================
 ================== LOGIN COMPONENT CSS =================*/
-
+#login{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+   position: relative;
+   min-height: 500px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+   text-decoration-color: red;
+}
+ #login label{
+    color: #f70d05;
+    font-weight: bolder;
+    text-shadow: red;
+}
 
 
 /*=========================================================
@@ -143,7 +178,7 @@ img {
     text-align: center;
     border: 2px solid #6adceb;
     border-radius: 10px;
-    background: #cffaf8;
+    background: #a1b9f7;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -169,4 +204,13 @@ img {
 
 .footer-container i:hover {
     color: red;
+}
+
+/*==================================================
+================== TABLET STYLES =================*/
+@media only screen and (min-width: 768px) {
+
+
+
+
 }
