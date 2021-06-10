@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../App.css';
 
 export default class AddForm extends Component {
    state = {
@@ -66,7 +67,7 @@ export default class AddForm extends Component {
                onChange={this.handleChange}
                />
                <br/>
-               <input type="submit" value="Add New Blog" onClick={this.showForm}/>
+               <input type="submit" value="Add New Blog"/>
             </form>
          </details>
       )

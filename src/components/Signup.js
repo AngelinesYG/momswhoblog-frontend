@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
+import '../App.css';
 
 class Signup extends React.Component {
    state = {
@@ -7,12 +9,13 @@ class Signup extends React.Component {
       email: "",
       username: "",
       password: "",
+      redirect: null,
    }
 
    handleSignup = (event) =>{
       this.setState(
          {
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
          }
       )
    }
@@ -58,7 +61,7 @@ class Signup extends React.Component {
           onChange={this.handleSignup}
           />
           <br />
-          <input type="submit" value="Sign Up" />
+          <input type="submit" value="Sign Up"/>
        </form>
     </div>
   }

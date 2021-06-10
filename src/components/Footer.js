@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css';
 
 class Footer extends React.Component {
     render() {
@@ -8,7 +9,7 @@ class Footer extends React.Component {
                 <p>Moms Who Blog was inspired by a working mom during a school project. For this mom, learning to code and create web pages while raising three small children and a teenager, in addition to taking care of a house and bills proved more challenging than expected. But with God and through hard work and dedication, nothing is impossible!</p>
 
                 <h5>Thanks for visiting!</h5>
-                <p>project by:</p>
+                <p>By:</p>
                 <ul>
                     <li>
                         <p>Angelines Yaport-Garcia</p>

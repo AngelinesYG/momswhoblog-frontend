@@ -1,19 +1,172 @@
+
+/*=========================================================
+================== APP COMPONENT CSS =================*/
+body{
+   background: #b4dbda;
+}
+.main-container{
+   margin: auto;
+}
+.smaller-width{
+    width: 90%;
+    margin: auto;
+}
+
 .App {
   text-align: center;
 }
+/*=========================================================
+================== WELCOME COMPONENT CSS =================*/
+#welcoming{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-left: 4px;
+   padding-right: 4px;
+}
+
+#welcoming h1{
+   justify-content: center;
+}
+#welcoming img{
+   width: 40vmin;
+   height: 40vmin;
+   min-width: 200px;
+   max-width: 600px;
+   min-height: 200px;
+   object-fit: cover;
+   border-radius: 10px;
+}
+.resources h2{
+   color: green;
+   text-decoration: underline;
+}
+#resources{
+   text-align: center;
+    margin: 50px auto;
+    background: #cffaf8;
+    border: 2px solid #6adceb;
+    border-radius: 10px;
+    padding: 20px;
+}
+#resources li{
+   list-style: none;
+   color: darkblue;
+}
+#resources a:hover{
+   color: red;
+   cursor: pointer
+}
+/*=========================================================
+================== NAV COMPONENT CSS =================*/
 nav {
    display: flex;
    justify-content: space-around;
    align-items: center;
    min-height: 10vh;
-   background: magenta;
-   color: white;
+   background: purple;
+   color: gold;
 }
 
-ul .nav-Links{
+.nav-Links{
    width: 50%;
    display: flex;
    justify-content: space-around;
    align-items: center;
    list-style: none;
+}
+
+.nav-Links li:hover{
+   color: blue;
+   cursor: pointer;
+}
+/*=========================================================
+================== ADDFORM COMPONENT CSS =================*/
+.addForm {
+    margin: 15px 0px 15px 50px;
+}
+#blogtitle{
+   font-size: 20px;
+   font-weight: bold;
+   color: purple;
+}
+.addForm label {
+    width: 100px;
+}
+/* #mom-container div{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+} */
+img {
+   width: 190px;
+   height: auto;
+}
+/*=========================================================
+================== MOMS COMPONENT CSS =================*/
+.momblog{
+
+}
+#mom-container{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+}
+
+#mom-container div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background: #8af5ff;
+   min-width: 300px;
+   max-width: 400px;
+   border: 3px solid red;
+   border-radius: 10px;
+   padding: 20px;
+   margin: 10px;
+}
+
+/*=========================================================
+================== SIGNUP COMPONENT CSS =================*/
+
+/*=========================================================
+================== LOGIN COMPONENT CSS =================*/
+
+
+
+/*=========================================================
+==================== FOOTER COMPONENT CSS ==================*/
+
+/*----- Every element in this section should begin with '.footer-container' -----*/
+
+.footer-container {
+    text-align: center;
+    border: 2px solid #6adceb;
+    border-radius: 10px;
+    background: #cffaf8;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-container ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: space-around;
+    padding-left: 0;
+}
+
+.footer-container li {
+    text-align: center;
+}
+
+.footer-container i {
+    margin: 0px 10px;
+    color: red);
+    font-size: 1.5em;
+    transition: .2s ease-in-out;
+}
+
+.footer-container i:hover {
+    color: red;
 }

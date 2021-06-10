@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import '../App.css';
 
 class Login extends React.Component {
    state = {
       currentUser: "",
       password: "",
    }
-
+   
    handleLogin = (event) =>{
       this.setState(
          {
@@ -18,9 +19,14 @@ class Login extends React.Component {
       this.props.login(event, this.state)
    }
 
+   // handleLogout = history => () =>{
+   //    store.remove('loggedin');
+   //    history.push('/login');
+   // }
+
    render = () => {
       return <div id='login'>
-         <form action="/signup/login" onSubmit={this.sendLoginInfo}>
+         <form action="/login" onSubmit={this.sendLoginInfo}>
             <label> User Name</label>
             <br />
              <input type="text"

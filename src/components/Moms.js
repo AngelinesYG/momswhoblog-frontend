@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
+import '../App.css';
 
 export default class Moms extends Component {
    render(){
       return(
-         <div>
-         <h3>Author: {this.props.moms.author}</h3>
+         <div className="momblog">
+         <h3>By: {this.props.moms.author}</h3>
          <img src={this.props.moms.img}/>
-         <h3>Title: {this.props.moms.title}</h3>
-         <h3>Blog Entry: {this.props.moms.blog}</h3>
          <details>
-            <summary>Edit Blog Entry</summary>
+         <summary id="blogtitle">{this.props.moms.title}</summary>
+         <h4 id="blogentry">Blog: {this.props.moms.blog}</h4>
+         </details>
+         <details>
+            <summary>Edit Blog</summary>
                <form name={this.props.moms._id}
                onSubmit={this.props.updateMom}>
                   <label htmlFor="author">Author</label>

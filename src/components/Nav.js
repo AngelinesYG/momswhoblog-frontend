@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const Nav = () => {
    const navStyle = {
-      color: 'purple'
+      color: 'gold'
    };
    return(
       <nav>
@@ -19,11 +19,8 @@ const Nav = () => {
             <Link style={navStyle} to="/signup">
             <li>Sign Up</li>
             </Link>
-            <Link style={navStyle} to="/signup/login">
+            <Link style={navStyle} to="/login">
             <li>Log In</li>
-            </Link>
-            <Link style={navStyle} to="login">
-            <li>Log Out</li>
             </Link>
          </ul>
       </nav>
