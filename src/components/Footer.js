@@ -7,11 +7,10 @@ class Footer extends React.Component {
             <div className="footer-container">
                <h5>About The Developer</h5>
                 <p>Moms Who Blog was inspired by a working mom during a school project. For this mom, learning to code and create web pages while raising three small children and a teenager, in addition to taking care of a house and bills proved more challenging than expected. But with God and through hard work and dedication, nothing is impossible!</p>
-
                 <h5>Thanks for visiting!</h5>
-                <p>By:</p>
                 <ul>
                     <li>
+                        <p>By:</p>
                         <p>Angelines Yaport-Garcia</p>
                         <a href="https://www.linkedin.com/in/angelines-yaport-garcia/" target="https://www.linkedin.com/in/angelines-yaport-garcia/">
                             <i className="fab fa-linkedin"></i>
