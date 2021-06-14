@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+Moms Who Blog is an improvement to Mom Blog.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a work in progress to hopefully be released to the public in a few months.
 
-## Available Scripts
+For this project I used a MERN Stack with a separate backend. It also incorporates React-router and a few hover effects.
 
-In the project directory, you can run:
+This projects was especially hard on me because it tested my understanding of how classes and everything connect, as well as my abilities to make every piece of code work. I doubted myself a lot during this project because the crazy struggles and errors made me feel like I was incapable of doing anything. As Rachel (on of my classmates) put it, I felt like I was trash!.
 
-### `npm start`
+I encountered so many errors starting this project and some didn't even make sense. The whole backend would crash over a typo I couldn't find, or the front end didn't connect to the back end correctly. So many different things... And in trying to make things work I refactored so many things in the code that it just confused me more.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I was super upset that I couldn't accomplish the authentication. Since this is an improvement to the original, it is not good enough if it's not authenticated, but hopefully it'll get there soon enough.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I can't say that I am proud of this project but I am proud of what I've been able to accomplish when comparing my first project with this one and how far I've come.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+An improvement would most definitely be to add authentication and fixed the wacky css. At some point I hope to make it so that moms can connect with each other, like become friends on the app, and maybe even chat. 
