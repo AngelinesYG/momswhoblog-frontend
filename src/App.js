@@ -79,7 +79,7 @@ class App extends Component {
       .then(response =>{
          this.setState({
             moms: response.data,
-            currentUser:{},
+            currentUser:this.state.currentUser,
          })
       })
    }
@@ -90,25 +90,26 @@ class App extends Component {
          this.setState({
             currentUser: response.data,
          });
-         <Redirect to="/login"/>
+         return <Redirect to="/Moms" />
       })
    }
 
-   logIn = (event, loggedInUser) =>{
+   login = (event, loggedInUser) =>{
       event.preventDefault()
-      axios.post('https://momswhoblog-backend.herokuapp.com/login/', loggedInUser).then(response =>{
+      console.log(loggedInUser)
+      axios.put('https://momswhoblog-backend.herokuapp.com/signup/login/', loggedInUser).then(response =>{
          console.log(response)
          this.setState({
             currentUser: response.data,
 
-         })
+         });
+         return <Redirect to="/Moms" />
       })
    }
    handleSignup = (event) =>{
       this.setState(
          {
             [event.target.name]: event.target.value,
-            redirect: true
          }
       )
    }
@@ -117,17 +118,25 @@ class App extends Component {
       this.setState(
          {
             [event.target.name]: event.target.value,
-            loggedIn: true,
-            currentUser: this.data.username
          }
       )
    }
 
+   logout = (event) =>{
+      this.setState(
+         {
+            currentUser: "",
+         }
+      );
+      return <Redirect to="/" />
+   }
+   handleLogout = (event) =>{
+      this.setState({
+         currentUser: "",
+      })
+   }
+
    render() {
-      const loggedIn = (this.state.currentUser.username === this.state.username) ? this.state.moms : this.state.signup
-      const {redirect } = this.state;
-      /*/ let isLoggedIn = this.state;
-      //    if(this.state.currentUser === isLoggedIn)? (this.moms.currentUser.username) : (this.login)/*/
       return(
          <Router>
             <div className="main-container">
@@ -142,21 +151,27 @@ class App extends Component {
                      <Footer/>
                    </div>
                   </Route>
-                  <Route path="/signup">
-                     <div id="signup-container">
-                     <Signup signUp={this.signUp}
-                     handleSignup={this.handleSignup}
+                  {!this.state.currentUser.username ?
+                     <div>
+                     <Route path="/signup">
+                        <div id="signup-container">
+                        <Signup signUp={this.signUp}
+                        handleSignup={this.handleSignup}
 
-                     />
+                        />
+                        </div>
+                     </Route>
+                     <Route path="/login" exact component={Login}>
+                      <div id="login-container">
+                        <Login login={this.login}
+                        handleLogin={this.handleLogin}
+                        />
+                      </div>
+                     </Route>
                      </div>
-                  </Route>
-                  <Route path="/login" exact component={Login}>
-                   <div id="login-container">
-                     <Login login={this.login}
-                     handleLogin={this.handleLogin}
-                     />
-                   </div>
-                  </Route>
+                      : null
+                  }
+
                   <Route path="/Moms">
                   <AddForm addMoms={this.addMoms} id="add"/>
                    <div id="smaller-width">
@@ -167,6 +182,7 @@ class App extends Component {
                         updateMom={this.updateMom}
                         deleteMom={this.deleteMom}
                         handleChange={this.handleChange}
+                        currentUser={this.state.currentUser}
                         />
                      })}
                      </div>

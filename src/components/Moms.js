@@ -14,6 +14,8 @@ export default class Moms extends Component {
          </details>
          <br />
          <details>
+         {this.props.currentUser.username === this.props.moms.author ?
+            <div>
             <summary>Edit Blog</summary>
                <form name={this.props.moms._id}
                onSubmit={this.props.updateMom}>
@@ -43,6 +45,10 @@ export default class Moms extends Component {
                onClick={this.props.deleteMom} id="del-btn">
                Delete Blog
                </button>
+               </div>
+               : null
+         }
+
          </details>
          </div>
       )

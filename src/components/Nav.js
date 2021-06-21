@@ -21,7 +21,7 @@ const Nav = () => {
             </Link>
             <Link style={navStyle} to="/login">
             <li>Log In</li>
-            </Link>
+            </Link> 
          </ul>
       </nav>
    )

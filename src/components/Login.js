@@ -3,7 +3,7 @@ import '../App.css';
 
 class Login extends React.Component {
    state = {
-      currentUser: "",
+      username: "",
       password: "",
    }
 
@@ -19,10 +19,7 @@ class Login extends React.Component {
       this.props.login(event, this.state)
    }
 
-   // handleLogout = history => () =>{
-   //    store.remove('loggedin');
-   //    history.push('/login');
-   // }
+   
 
    render = () => {
       return <div id='login'>
@@ -42,7 +39,7 @@ class Login extends React.Component {
              <input type="password"
              id="password"
              name="password"
-             value={this.props.ccurrentUser} onChange={this.handleLogin} />
+             value={this.props.currentUser} onChange={this.handleLogin} />
              <br />
              <br />
              <input type="submit" value="Sign In"  />
